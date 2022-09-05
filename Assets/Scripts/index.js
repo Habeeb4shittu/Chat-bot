@@ -36,13 +36,13 @@ function send() {
   )
   $("#message").val('');
 }
-let preloader = document.querySelector('.preloader');
-window.addEventListener('loadstart',function(){
-  preloader.style.display = 'block'
-})
-window.addEventListener('load',function(){
-  preloader.style.display = 'none'
-})
+// let preloader = document.querySelector('.preloader');
+// window.addEventListener('loadstart',function(){
+//   preloader.style.display = 'block'
+// })
+// window.addEventListener('load',function(){
+//   preloader.style.display = 'none'
+// })
 
 window.addEventListener('keyup', function (e) {
   // console.log(e.key);
