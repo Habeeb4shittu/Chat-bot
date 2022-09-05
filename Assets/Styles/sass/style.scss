@@ -160,6 +160,16 @@ body {
         overflow: none;
     }
 }
+@media screen and (min-height:1024px) {
+    .main-container{
+        @include center;
+        height: 45vh;
+        width: 500px;
+        box-shadow: 0 0 4px 2px grey;
+        background: rgb(188, 246, 255);
+        overflow: none;
+    }
+}
 //     .preloader{
 //         width: 200%;
 //         height: 70vh;
