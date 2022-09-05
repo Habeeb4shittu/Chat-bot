@@ -139,24 +139,25 @@ body {
             }
         }
     }
-    .preloader{
-        width: 200%;
-        height: 70vh;
-        animation: preAnime 3s infinite;
-        img{
-            aspect-ratio: 1/1;
-            width: 200px;
-        }
-    }
 }
-@keyframes preAnime{
-    0%{
-        scale: 0;
-    }50%{
-        scale: 1;
-    }75%{
-        scale: 0;
-    }100%{
-        scale: 1;
-    }
-}
+//     .preloader{
+//         width: 200%;
+//         height: 70vh;
+//         animation: preAnime 3s infinite;
+//         img{
+//             aspect-ratio: 1/1;
+//             width: 200px;
+//         }
+//     }
+// }
+// @keyframes preAnime{
+//     0%{
+//         scale: 0;
+//     }50%{
+//         scale: 1;
+//     }75%{
+//         scale: 0;
+//     }100%{
+//         scale: 1;
+//     }
+// }
