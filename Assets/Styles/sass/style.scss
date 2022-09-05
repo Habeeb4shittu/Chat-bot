@@ -1,0 +1,162 @@
+@import "./resets";
+@import "./vars";
+// ::-webkit-scrollbar{
+//     width: 4px;
+// }
+// ::-webkit-scrollbar-thumb{
+//     background: red;
+// }
+// ::-webkit-scrollbar-track{
+//     background-color: blue;
+//     width: 7px;
+// }
+// ::-webkit-scrollbar-button{
+    
+// }
+@mixin fixed{
+    position: fixed;
+}
+@mixin center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column
+}
+@keyframes zoomIn {
+    from{
+        scale: 0;
+    }to{
+        scale: 1;
+    }
+}
+@keyframes zoomInBounce {
+    0%{
+        scale: 0;
+    }25%{
+        scale: 1;
+    }50%{
+        margin-top: -4px;
+    }75%{
+        margin-top: 4px;
+    }90%{
+        margin-top: -2px;
+    }100%{
+        margin-top:2px;
+    }
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh
+}
+.main-container{
+    @include center;
+    height: 90vh;
+    width: 400px;
+    box-shadow: 0 0 4px 2px grey;
+    background: rgb(188, 246, 255);
+    .header{
+        border-bottom: 3px solid rgb(119, 119, 246);
+        text-align: center;
+        font-size: 25px;
+        @include center();
+        p{
+            width: fit-content;
+            color: rgb(22, 146, 146);
+            &:hover{
+                color: blue;
+            }
+        }
+    }
+    
+    .message-body{
+        // border: 3px solid red;
+        scrollbar-width:none;
+        height: 490px;
+        display: flex;
+        flex-direction: column;
+        overflow: auto;
+        width: 94%;
+        // border: 1px solid red;
+        .in{
+            margin-top: 6px;
+            background: rgba(3, 24, 147, 0.32);
+            // width: fit-content;
+            padding: 0px 7px 0 7px;
+            align-self: flex-end;
+            border-bottom-left-radius: 10px;
+            border-top-right-radius: 10px;
+            word-break: break-all;
+            max-width: 75%;
+            animation: zoomInBounce 3s;
+        }
+        .timeIn{
+            align-self: flex-end;
+            margin-top: -17px;
+            font-size: xx-small;
+            animation: zoomIn 3s;
+            margin-bottom: -4px;
+        }
+        .out{
+            margin-top: 6px;
+            background: rgba(3, 24, 147, 0.32);
+            // width: fit-content;
+            padding: 0px 7px 0 7px;
+            align-self: flex-start;
+            border-bottom-left-radius: 10px;
+            border-top-right-radius: 10px;
+            word-break: break-all;
+            max-width: 75%;
+            animation: zoomInBounce 3s;
+        }
+        .timeOut{
+            align-self: flex-start;
+            margin-top: -17px;
+            font-size: xx-small;
+            animation: zoomIn 3s;
+            margin-bottom: -4px;
+        }
+    }
+    .textbox{
+        // @include fixed;
+        // transform: translateY(585px);
+        display: flex;
+        .btn{
+            border: 1px solid black;
+            border-left: none;
+            border-radius: 0;
+            outline: none;
+        }
+        #message{
+            resize: none;
+            border: 1px solid black ;
+            border-right: none;
+            word-break: break-all;
+            background: rgba(0, 0, 0, 0);
+            &:focus{
+                outline: none;
+            }
+        }
+    }
+    .preloader{
+        width: 200%;
+        height: 70vh;
+        animation: preAnime 3s infinite;
+        img{
+            aspect-ratio: 1/1;
+            width: 200px;
+        }
+    }
+}
+@keyframes preAnime{
+    0%{
+        scale: 0;
+    }50%{
+        scale: 1;
+    }75%{
+        scale: 0;
+    }100%{
+        scale: 1;
+    }
+}
