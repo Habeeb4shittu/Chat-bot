@@ -2,15 +2,12 @@ let sender = document.querySelector(".btn");
 count = 1
 sender.addEventListener("click", function () {
   send();
-  
+
 })
 function send() {
   let message = document.querySelector("#message").value;
-   if (message.length == 0 && sender.click) {
-    // $("#message-body").append(`
-    //   <div class="alert alert-danger">You have an empty message</div>
-    // `);
-  }else if (message.length >= 1 && count % 2 == 0) {
+  if (message.length == 0 && sender.click) return;
+  if (count % 2 == 0) {
     count++;
     var d = new Date();
     var h = d.getHours();
@@ -20,7 +17,7 @@ function send() {
     <p class="out">${message}</p>
     <p class="timeOut">${h}:${m}:${s}</i></p>
     `);
-  } else if (message.length >= 1 && count % 2 == 1) {
+  } else if (count % 2 == 1) {
     count++;
     var d = new Date();
     var h = d.getHours();
